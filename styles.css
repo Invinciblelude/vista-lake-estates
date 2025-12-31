@@ -2110,6 +2110,723 @@ body {
     }
 }
 
+/* =====================================================
+   PART VI: Capital Stack & Returns
+   ===================================================== */
+
+.capital-overview h3,
+.returns-section h3,
+.sensitivity-section h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 24px;
+}
+
+.capital-tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.capital-table h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy-700);
+    margin-bottom: 16px;
+}
+
+.finance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.finance-table th {
+    background: var(--navy-800);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.finance-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--navy-100);
+    font-size: 14px;
+    color: var(--navy-700);
+}
+
+.finance-table .total-row {
+    background: var(--navy-50);
+}
+
+.finance-table .total-row td {
+    font-weight: 700;
+    color: var(--navy-900);
+}
+
+.returns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.return-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.return-header {
+    padding: 16px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.return-card.base .return-header {
+    background: var(--navy-800);
+    color: white;
+}
+
+.return-card.upside .return-header {
+    background: var(--emerald-500);
+    color: white;
+}
+
+.return-card.downside .return-header {
+    background: var(--amber-500);
+    color: white;
+}
+
+.return-scenario {
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--navy-500);
+    border-bottom: 1px solid var(--navy-100);
+}
+
+.return-metrics {
+    padding: 20px 24px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--navy-600);
+}
+
+.metric-row.highlight {
+    font-weight: 700;
+    color: var(--navy-900);
+    border-top: 1px solid var(--navy-200);
+    padding-top: 12px;
+    margin-top: 8px;
+}
+
+.return-kpis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--navy-100);
+}
+
+.kpi {
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid var(--navy-100);
+}
+
+.kpi:last-child {
+    border-right: none;
+}
+
+.kpi-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-500);
+}
+
+.kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy-400);
+}
+
+.sensitivity-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.sensitivity-table th {
+    background: var(--navy-50);
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--navy-600);
+}
+
+.sensitivity-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--navy-100);
+    font-size: 14px;
+}
+
+.risk-badge {
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.risk-badge.low { background: rgba(16, 185, 129, 0.1); color: var(--emerald-500); }
+.risk-badge.medium { background: rgba(245, 158, 11, 0.1); color: var(--amber-500); }
+.risk-badge.high { background: rgba(239, 68, 68, 0.1); color: var(--red-500); }
+
+/* =====================================================
+   PART VII: Legal Risk
+   ===================================================== */
+
+.legal-warning {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--amber-400);
+    border-radius: var(--radius-md);
+    margin-bottom: 40px;
+}
+
+.warning-icon {
+    font-size: 32px;
+}
+
+.warning-content h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--amber-500);
+    margin-bottom: 8px;
+}
+
+.warning-content p {
+    color: var(--navy-600);
+    margin: 0;
+}
+
+.legal-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.legal-category h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--navy-100);
+}
+
+.legal-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.legal-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--navy-100);
+    border-radius: var(--radius-md);
+}
+
+.legal-item.critical {
+    border-left: 4px solid var(--red-500);
+}
+
+.legal-status {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    height: fit-content;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    background: var(--navy-100);
+    color: var(--navy-600);
+}
+
+.legal-item.critical .legal-status {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red-500);
+}
+
+.legal-content strong {
+    display: block;
+    font-size: 15px;
+    color: var(--navy-800);
+    margin-bottom: 6px;
+}
+
+.legal-content p {
+    font-size: 14px;
+    color: var(--navy-500);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   PART VIII: Construction Costs
+   ===================================================== */
+
+.cost-disclaimer {
+    padding: 16px 20px;
+    background: var(--navy-50);
+    border-radius: var(--radius-sm);
+    margin-bottom: 32px;
+}
+
+.cost-disclaimer p {
+    font-size: 14px;
+    color: var(--navy-600);
+    margin: 0;
+}
+
+.cost-table-section {
+    margin-bottom: 40px;
+}
+
+.cost-table-section h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 16px;
+}
+
+.cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.cost-table th {
+    background: var(--navy-800);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cost-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--navy-100);
+    font-size: 14px;
+    color: var(--navy-700);
+}
+
+.cost-table .subtotal-row {
+    background: var(--navy-50);
+}
+
+.cost-table .total-row {
+    background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+    color: white;
+}
+
+.cost-table .total-row td {
+    color: white;
+    border-bottom: none;
+}
+
+.cost-notes h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 20px;
+}
+
+.barcelona-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.barcelona-option {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--navy-100);
+    border-radius: var(--radius-md);
+}
+
+.barcelona-option.preferred {
+    border: 2px solid var(--emerald-500);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.barcelona-option h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 12px;
+}
+
+.barcelona-option ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.barcelona-option li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--navy-600);
+}
+
+/* =====================================================
+   PART IX: Market Comps
+   ===================================================== */
+
+.comps-section h3,
+.pricing-thesis h3,
+.sellout-schedule h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 20px;
+}
+
+.market-comps-table,
+.sellout-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.market-comps-table th,
+.sellout-table th {
+    background: var(--navy-800);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.market-comps-table td,
+.sellout-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--navy-100);
+    font-size: 14px;
+}
+
+.market-comps-table .highlight-row {
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.1), transparent);
+}
+
+.market-comps-table .highlight-row td {
+    font-weight: 600;
+    color: var(--navy-900);
+}
+
+.thesis-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.thesis-card {
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--navy-100);
+    border-radius: var(--radius-md);
+}
+
+.thesis-card h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 16px;
+}
+
+.thesis-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.thesis-card li {
+    position: relative;
+    padding: 8px 0 8px 24px;
+    font-size: 14px;
+    color: var(--navy-600);
+}
+
+.thesis-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold-500);
+    font-weight: 700;
+}
+
+/* =====================================================
+   PART X: Governance
+   ===================================================== */
+
+.entity-structure h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 24px;
+}
+
+.structure-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px;
+    background: var(--navy-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: 40px;
+}
+
+.entity-box {
+    padding: 24px 48px;
+    background: var(--bg-card);
+    border: 2px solid var(--navy-200);
+    border-radius: var(--radius-md);
+    text-align: center;
+    min-width: 280px;
+}
+
+.entity-box.sponsor {
+    border-color: var(--gold-500);
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.1), transparent);
+}
+
+.entity-box.project {
+    border-color: var(--navy-600);
+    background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+    color: white;
+}
+
+.entity-box.project h4,
+.entity-box.project p {
+    color: white;
+}
+
+.entity-box.investors {
+    border-color: var(--emerald-500);
+}
+
+.entity-box h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy-500);
+    margin-bottom: 8px;
+}
+
+.entity-box p {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin: 0 0 8px;
+}
+
+.entity-box .ownership {
+    font-size: 12px;
+    color: var(--navy-400);
+}
+
+.structure-arrow {
+    font-size: 24px;
+    color: var(--navy-300);
+}
+
+.ownership-table-section h3,
+.waterfall-section h3,
+.decision-rights h3,
+.fees-section h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 20px;
+}
+
+.ownership-table,
+.fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.ownership-table th,
+.fees-table th {
+    background: var(--navy-800);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ownership-table td,
+.fees-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--navy-100);
+    font-size: 14px;
+}
+
+.waterfall-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.waterfall-step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--navy-100);
+    border-radius: var(--radius-md);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold-500);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.step-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 4px;
+}
+
+.step-content p {
+    font-size: 14px;
+    color: var(--navy-500);
+    margin: 0;
+}
+
+.decisions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.decision-category {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--navy-100);
+    border-radius: var(--radius-md);
+}
+
+.decision-category h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy-800);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--navy-100);
+}
+
+.decision-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.decision-category li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+    color: var(--navy-600);
+}
+
+.decision-category li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold-500);
+}
+
+@media (max-width: 900px) {
+    .capital-tables,
+    .returns-grid,
+    .barcelona-comparison,
+    .thesis-cards,
+    .decisions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Footer */
 .report-footer {
     padding: 48px 80px;
