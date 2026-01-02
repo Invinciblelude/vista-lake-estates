@@ -248,6 +248,14 @@ body {
     margin: 0 auto 48px;
 }
 
+/* Cover Meta Row - Clean Three Column Layout */
+.cover-meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
 .cover-meta {
     display: flex;
     justify-content: center;
@@ -271,41 +279,71 @@ body {
 
 .meta-value {
     font-family: var(--font-display);
-    font-size: 16px;
+    font-size: 18px;
     color: white;
+    font-weight: 500;
 }
 
+/* Cover Stats - Three Card Grid */
 .cover-stats {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
+    margin-bottom: 48px;
 }
 
 .stat-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(138, 163, 191, 0.2);
     border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(201, 169, 98, 0.3);
 }
 
 .stat-number {
     font-family: var(--font-display);
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
     color: var(--gold-400);
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--navy-300);
-    margin-top: 8px;
+    margin-top: 12px;
+}
+
+/* Cover Highlights - Subtle Key Points */
+.cover-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 32px;
+    margin-top: 20px;
+}
+
+.highlight-item {
+    font-size: 14px;
+    color: var(--navy-200);
+    font-weight: 400;
+}
+
+.highlight-item:not(:last-child)::after {
+    content: "";
 }
 
 .scroll-indicator {
@@ -321,6 +359,40 @@ body {
     font-size: 12px;
     letter-spacing: 1px;
     animation: bounce 2s infinite;
+}
+
+.scroll-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(138, 163, 191, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.scroll-number {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold-400);
+    line-height: 1;
+}
+
+.scroll-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-300);
+    margin-top: 8px;
+}
+
+.scroll-sub {
+    font-size: 12px;
+    color: var(--navy-400);
+    margin-top: 8px;
+    font-weight: 400;
 }
 
 @keyframes bounce {
