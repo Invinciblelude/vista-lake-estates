@@ -69,6 +69,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // =====================================================
+    // VISION GALLERY TOGGLE (Future/Current Site Views)
+    // =====================================================
+    
+    const visionTabs = document.querySelectorAll('.vision-tab');
+    const visionViews = document.querySelectorAll('.vision-view');
+    
+    visionTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetView = this.dataset.view;
+            
+            // Remove active from all tabs
+            visionTabs.forEach(t => t.classList.remove('active'));
+            
+            // Hide all views
+            visionViews.forEach(v => {
+                v.classList.remove('active');
+                v.style.display = 'none';
+            });
+            
+            // Activate clicked tab
+            this.classList.add('active');
+            
+            // Show corresponding view
+            const activeView = document.querySelector(`.vision-view[data-view="${targetView}"]`);
+            if (activeView) {
+                activeView.classList.add('active');
+                activeView.style.display = 'block';
+            }
+        });
+    });
+    
+    // =====================================================
     // STRATEGY TOGGLE (Returns Section)
     // =====================================================
     
