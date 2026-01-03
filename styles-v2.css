@@ -654,19 +654,37 @@ body {
 }
 
 /* =====================================================
-   SECTIONS
+   SECTIONS - Consistent Layout System
    ===================================================== */
 .section {
     padding: var(--section-padding) 0;
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+    border-radius: 2px;
+    opacity: 0.5;
 }
 
 .section-dark {
-    background: var(--navy-900);
+    background: linear-gradient(180deg, var(--navy-900) 0%, #0d1e33 100%);
     color: white;
 }
 
+.section-dark::before {
+    background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+}
+
 .section-light {
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, #f0f4f8 100%);
 }
 
 .section-header {
@@ -3206,7 +3224,8 @@ body {
     background: var(--navy-800);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(201, 169, 97, 0.2);
 }
 
 .vision-tabs {
@@ -3308,6 +3327,137 @@ body {
 
 .doc-item.featured-doc i:first-child {
     color: var(--gold-500);
+}
+
+/* =====================================================
+   Enhanced Image Gallery Showcase
+   ===================================================== */
+
+.image-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.showcase-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+}
+
+.showcase-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.1);
+}
+
+.showcase-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10, 22, 40, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover .showcase-overlay {
+    background: linear-gradient(180deg, rgba(10, 22, 40, 0.2) 0%, rgba(10, 22, 40, 0.95) 100%);
+}
+
+.showcase-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.showcase-desc {
+    font-size: 13px;
+    color: var(--navy-300);
+}
+
+.showcase-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+    color: var(--navy-900);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.showcase-expand {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover .showcase-expand {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.showcase-expand:hover {
+    background: var(--gold-500);
+    color: var(--navy-900);
+}
+
+/* Full-width featured image */
+.showcase-item.featured {
+    grid-column: span 2;
+    aspect-ratio: 21/9;
+}
+
+@media (max-width: 768px) {
+    .image-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-item.featured {
+        grid-column: span 1;
+        aspect-ratio: 16/10;
+    }
+    
+    .showcase-title {
+        font-size: 18px;
+    }
 }
 
 /* Vision Gallery Responsive */
