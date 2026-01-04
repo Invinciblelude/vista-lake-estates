@@ -3227,6 +3227,8 @@ body {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     border: 1px solid rgba(201, 169, 97, 0.2);
+    min-height: 340px;
+    max-height: 340px;
 }
 
 .vision-tabs {
