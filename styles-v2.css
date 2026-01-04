@@ -3270,10 +3270,10 @@ body {
     position: relative;
 }
 
-.vision-view img {
+.vision-gallery .vision-view img {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
+    height: 300px !important;
+    object-fit: cover !important;
     display: block;
 }
 
